@@ -4,15 +4,15 @@ These are the report scripts.
 
 Script | Outputs
 ---|---
-AggregateDataEntitiesReport.ps1 | AggregateDataEntities.csv 
-AggregateMeasuresReport.ps1 | AggregateMeasures.csv
-DataEntityFieldReport.ps1 | DataEntityFields.csv 
-DataEntityReport.ps1 | DataEntities.csv 
-KPIReport.ps1 | KPIs.csv 
-LicenseCode-ConfigKeyReport.ps1 | LicenseCodes.csv<br>ConfigKeys.csv<br>ConfigKeyGroups.csv<br>MenuItems.csv 
-SSRSReport.ps1 | SSRSReports.csv 
-TablesReport.ps1 | Tables.csv<br>This report takes awhile to run, but it produces output as it runs. 
-WorkflowTypesReport.ps1 | WorkflowTypes.csv 
+AggregateDataEntitiesReport.ps1 | AggregateDataEntities.json 
+AggregateMeasuresReport.ps1 | AggregateMeasures.json
+DataEntityFieldReport.ps1 | DataEntityFields.json 
+DataEntityReport.ps1 | DataEntities.json 
+KPIReport.ps1 | KPIs.json 
+LicenseCode-ConfigKeyReport.ps1 | LicenseCodes.json<br>ConfigKeys.json<br>ConfigKeyGroups.json<br>MenuItems.json 
+SSRSReport.ps1 | SSRSReports.json 
+TablesReport.ps1 | Tables.json<br>This report takes awhile to run, but it produces output as it runs. 
+WorkflowTypesReport.ps1 | WorkflowTypes.json 
 
 ## Helper functions
 

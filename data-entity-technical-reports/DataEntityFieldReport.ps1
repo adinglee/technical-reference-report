@@ -29,7 +29,7 @@ Function AxDataEntityFieldReport  {
     PROCESS {
         $dataEntities | Sort-Object Name |
             Select-Object Name, Public, PublicCollectionName, StagingTable, EntityCategory, TableGroup, Field_Name, Field_Binding | 
-            Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+            ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
     }
 
     END {

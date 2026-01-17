@@ -56,4 +56,4 @@ $workflows = Get-AxWorkflowTypes -metadataPath "C:\AOSService\PackagesLocalDirec
 
 $workflows | Sort-Object Name |
     Select-Object Name, Label, HelpText, AssociationType, Category, Participant, Role | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file

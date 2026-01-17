@@ -62,5 +62,5 @@ $aggregateDataEntities = Get-AxAggregateDataEntities -metadataPath "C:\AOSServic
 
 $aggregateDataEntities | Sort-Object Name |
     Select-Object Name, DataSource, Public, PublicCollectionName, TableGroup, EntityCategory, Fields, Models | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 

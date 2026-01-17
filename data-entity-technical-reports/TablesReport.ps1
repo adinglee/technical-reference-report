@@ -193,4 +193,4 @@ $tables = Get-AxTables -metadataPath "C:\AOSService\PackagesLocalDirectory"
 
 $tables | Sort-Object Name |
     Select-Object Name, TableGroup, CrossCompany, SystemTable, Indexes, EntityOrView | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file

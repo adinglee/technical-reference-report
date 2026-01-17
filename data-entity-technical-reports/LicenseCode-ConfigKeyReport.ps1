@@ -237,7 +237,7 @@ $lc = Get-AxLicenseCodes -metadataPath "C:\AOSService\PackagesLocalDirectory"
 
 $lc | 
     Select-Object Name, Models, Package, LabelID, Label | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 
 #
 # ConfigKey
@@ -248,7 +248,7 @@ $configKeys = Get-AxConfigKeys -metadataPath "C:\AOSService\PackagesLocalDirecto
 
 $configKeys | 
     Select-Object Name, Models, LicenseCode, ParentKey, ConfigKey, Enabled, LabelID, Label | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 
 #
 # ConfigKeyGroup
@@ -259,7 +259,7 @@ $configKeyGroups = Get-AxConfigKeyGroups -metadataPath "C:\AOSService\PackagesLo
 
 $configKeyGroups | 
     Select-Object Name, Models, LicenseCode, ParentKeyGroup, ConfigKeys, Enabled, LabelID, Label | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 
 
 #
@@ -271,4 +271,4 @@ $menuItems = Get-AxMenuItems -metadataPath "C:\AOSService\PackagesLocalDirectory
 
 $menuItems | 
     Select-Object Name, MenuItemType, Models, ObjectType, Object, ConfigKey, LabelID, Label | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file

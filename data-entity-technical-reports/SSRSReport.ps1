@@ -81,4 +81,4 @@ $reports = Get-AxSSRSReports -metadataPath "C:\AOSService\PackagesLocalDirectory
 
 $reports | Sort-Object Name |
     Select-Object Name, DataSet, Filters, Fields, PrintMgmt | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file

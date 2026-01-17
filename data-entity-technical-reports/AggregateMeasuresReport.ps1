@@ -119,5 +119,5 @@ $aggregateMeasures = Get-AxAggregateMeasures -metadataPath "C:\AOSService\Packag
 
 $aggregateMeasures | Sort-Object Name |
     Select-Object Name, MeasureGroup, MeasureGroupDataSource, Measures, Dimensions | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 

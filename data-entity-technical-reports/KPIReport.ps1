@@ -66,5 +66,5 @@ $KPIs = Get-KPIs -metadataPath "C:\AOSService\PackagesLocalDirectory"
 
 $KPIs | Sort-Object Name |
     Select-Object Name, Label, Measurement, ValueType, GoalType, Value, CalculatedMeasure, CalculatedMeasureGroup, FormExposed, WorkspaceExposed | 
-    Export-Csv $outFile".csv" -NoTypeInformation # export as csv file
+    ConvertTo-Json -Depth 2 | Set-Content ($outFile + ".json") # export as json file
 
